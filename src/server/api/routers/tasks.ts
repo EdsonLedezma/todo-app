@@ -96,20 +96,20 @@ export const useTasksRouter = createTRPCRouter({
         };
       }
       catch (error) {
+        
         return {
           error : new Error("Error updating task"),
           code: 500,
           result: null,
-          message: "Error updating task"
+          message: ""
         };
       }
     }),
 
-  // Procedimiento para eliminar una tarea
-  deleteTask: protectedProcedure
+    deleteTask: publicProcedure
     .input(
       z.object({
-        id: z.string().uuid(), // El `id` de la tarea a eliminar
+        id: z.string().uuid(), // El ID de la tarea a eliminar
       })
     )
     .mutation(async ({ ctx, input }) => {
@@ -117,7 +117,8 @@ export const useTasksRouter = createTRPCRouter({
       await ctx.db.tasks.delete({
         where: { id: input.id },
       });
-
+  
       return { success: true };
     }),
+  
 });

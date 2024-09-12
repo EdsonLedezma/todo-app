@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import * as z from "zod"
-import { Button } from "~/components/ui/button"
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+
 import {
   Form,
   FormField,
@@ -11,19 +11,27 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-} from "~/components/ui/form"
-import { Badge } from "~/components/ui/badge"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "~/components/ui/table"
-import { api } from "~/trpc/react"
-import Loading from "~/app/loading"
+} from "~/components/ui/form";
+import { Badge } from "~/components/ui/badge";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "~/components/ui/table";
+import { api } from "~/trpc/react";
+import Loading from "~/app/loading";
 
+import React from "react";
 
 // Definir el esquema del formulario con Zod
 const formSchema = z.object({
   id: z.string().uuid(),
-})
+});
 
-type FormValues = z.infer<typeof formSchema>
+type FormValues = z.infer<typeof formSchema>;
 
 export default function TaskList() {
   const taskQuery = api.useTasksRouter.getAllTasks.useQuery();
@@ -33,18 +41,20 @@ export default function TaskList() {
     defaultValues: {
       id: "",
     },
-  })
+  });
 
-  const { data: tasks, isLoading } = taskQuery
+  const { data: tasks, isLoading } = taskQuery;
 
-  
+  const [filterString, setFilterString] = React.useState("");
+
   if (isLoading) {
-    return <Loading/>
+    return <Loading />;
   }
+  const data = taskQuery.data?.filter((task) => task.id.includes(filterString));
 
   return (
     <div className="container mx-auto py-10">
-      <h1 className="text-2xl font-bold mb-4">Lista de Tareas</h1>
+      <h1 className="mb-4 text-2xl font-bold">Lista de Tareas</h1>
 
       <Form {...form}>
         <form className="space-y-8">
@@ -91,16 +101,15 @@ export default function TaskList() {
         </TableBody>
       </Table>
     </div>
-  )
+  );
 }
 
-
 function formatDate(date: Date): string {
-  return new Intl.DateTimeFormat('es-ES', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-  }).format(date)
+  return new Intl.DateTimeFormat("es-ES", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  }).format(date);
 }
