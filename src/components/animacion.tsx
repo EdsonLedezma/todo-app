@@ -17,7 +17,7 @@ const AnimatedBackground = () => {
           z-index: -1;
           overflow: hidden;
           background-color: limegreen ;
-          background-image: url('https://e1.pxfuel.com/desktop-wallpaper/441/68/desktop-wallpaper-sameh-fathy-on-screen-in-2019-spongebob-weed.jpg');
+          background-image: url('https://img.freepik.com/foto-gratis/ilustracion-paisaje-fluvial-estilo-pixel-art_23-2151793116.jpg');
           background-position: center;
           background-repeat: no-repeat;
         }
@@ -29,15 +29,15 @@ const AnimatedBackground = () => {
           background-size: contain;
         }
         .car1 {
-          background-image: url('https://pnghq.com/wp-content/uploads/download-free-porro-png-images-transparent-backgrounds-31762.png');
+          background-image: url('https://img.freepik.com/psd-premium/mosca-pajaro-golondrina-aisla-todo-cuerpo-fondo-transparente-psd_693425-50953.jpg');
           animation: moveCar1 15s linear infinite;
         }
         .car2 {
-          background-image: url('https://pnghq.com/wp-content/uploads/download-free-porro-png-images-transparent-backgrounds-31762.png');
+          background-image: url('https://img.freepik.com/psd-premium/mosca-pajaro-golondrina-aisla-todo-cuerpo-fondo-transparente-psd_693425-50953.jpg');
           animation: moveCar2 20s linear infinite;
         }
         .car3 {
-          background-image: url('https://pnghq.com/wp-content/uploads/download-free-porro-png-images-transparent-backgrounds-31762.png');
+          background-image: url('https://img.freepik.com/psd-premium/mosca-pajaro-golondrina-aisla-todo-cuerpo-fondo-transparente-psd_693425-50953.jpg');
           animation: moveCar3 25s linear infinite;
         }
         @keyframes moveCar1 {
