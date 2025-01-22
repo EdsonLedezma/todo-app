@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "~/components/ui/card"
 import { ScrollArea } from "~/components/ui/scroll-area"
 import { Button } from "~/components/ui/button"
@@ -31,7 +31,7 @@ const PrivacyNotice: React.FC<PrivacyNoticeProps> = ({ onAccept }) => {
                         <section>
                             <h2 className="text-xl font-semibold mb-2">2. Responsable del Tratamiento de Datos</h2>
                             <p>
-                                [Nombre de la empresa/desarrollador] es responsable del tratamiento de sus datos personales y de la
+                                [Ing.Edson Ledezma] es responsable del tratamiento de sus datos personales y de la
                                 protección de su privacidad en relación con el uso de nuestra aplicación de notas y tareas (en adelante,
                                 la "Aplicación").
                             </p>
@@ -71,8 +71,7 @@ const PrivacyNotice: React.FC<PrivacyNoticeProps> = ({ onAccept }) => {
                             <h2 className="text-xl font-semibold mb-2">6. Derechos ARCO</h2>
                             <p>
                                 Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse al tratamiento de sus datos personales
-                                (Derechos ARCO) de acuerdo con la Ley. Para ejercer estos derechos, por favor contacte a [correo
-                                electrónico de contacto].
+                                (Derechos ARCO) de acuerdo con la Ley. Para ejercer estos derechos, por favor contacte a [edsonmon985@gmail.com].
                             </p>
                         </section>
 
@@ -129,4 +128,3 @@ const PrivacyNotice: React.FC<PrivacyNoticeProps> = ({ onAccept }) => {
 }
 
 export default PrivacyNotice
-

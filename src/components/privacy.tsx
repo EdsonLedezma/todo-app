@@ -16,7 +16,7 @@ export default function PrivacyNoticeWrapper() {
                 <PrivacyNotice onAccept={handleAcceptPrivacyNotice} />
             ) : (
                 <div className="text-center mt-8">
-                    <h1 className="text-2xl font-bold">Bienvenido a la aplicación de notas</h1>
+                    <h1 className="text-2xl font-bold">Bienvenido a la aplicacion de notas</h1>
                     <p className="mt-4">Gracias por aceptar nuestro aviso de privacidad.</p>
                 </div>
             )}
