@@ -1,19 +1,18 @@
 
+import AnimatedBackground from "~/components/AnimatedBackground"
+import Sidebar from "./sidebar"
+import PrivacyNoticeWrapper from "~/components/privacy"
 
-import { HydrateClient } from "~/trpc/server";
 
-import AnimatedBackground from "~/components/animacion";
-import Sidebar from "./sidebar";
-
-export default async function Home() {
+export default function Home() {
   return (
-    <HydrateClient>
-      <>
+    <>
+      <AnimatedBackground />
 
-
-        <AnimatedBackground />
-
-      </>
-    </HydrateClient>
-  );
+      <main className="flex-1 overflow-y-auto p-4">
+        <PrivacyNoticeWrapper />
+      </main>
+    </>
+  )
 }
+
