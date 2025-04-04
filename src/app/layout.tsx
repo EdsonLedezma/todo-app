@@ -6,6 +6,8 @@ import { type Metadata } from "next";
 import { TRPCReactProvider } from "~/trpc/react";
 import { Toaster } from "sonner";
 import Sidebar from "./sidebar";
+import { Wallet } from "~/components/walletProvider";
+
 
 
 export const metadata: Metadata = {
@@ -21,13 +23,15 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
         <TRPCReactProvider>
-          <div className="flex h-screen">
+          <Wallet>
+            <div className="flex h-screen">
               <Sidebar />
               <main className="flex-1 p-4">
-              {children}
+                {children}
               </main>
-          </div>
-          <Toaster />
+            </div>
+            <Toaster />
+          </Wallet>
         </TRPCReactProvider>
       </body>
     </html>
